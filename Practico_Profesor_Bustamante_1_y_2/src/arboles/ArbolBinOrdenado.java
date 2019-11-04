@@ -139,6 +139,12 @@ public class ArbolBinOrdenado
         }
     }
     
+    
+    /*------------------------------------*/
+    /*------------------------------------*/
+    /*------------------------------------*/
+    /*------------------------------------*/
+    
     public void ImprimirPreOrden1 (JTextArea JTextArea1)
     {
         JTextArea1.append ("Imprimir PreOrder" + "\n");
@@ -154,6 +160,51 @@ public class ArbolBinOrdenado
             ImprimirPreOrden1 ( Reco.der , JTextArea1);
         }
     }
+    
+    /*------------------------------------*/
+    /*------------------------------------*/
+    /*------------------------------------*/
+    /*------------------------------------*/
+    public void ImprimirEntreOrden1(JTextArea JTextArea1)
+    {
+        JTextArea1.append ("Imprimir EntreOrden" + "\n");
+        ImprimirEntreOrden1(raiz , JTextArea1);
+    }
+    
+    private void ImprimirEntreOrden1(Nodo Reco, JTextArea JTextArea1)
+    {
+        if (Reco != null)
+        {
+            ImprimirEntreOrden1(Reco.izq,JTextArea1);
+            JTextArea1.append(Reco.info + " ");
+            ImprimirEntreOrden1(Reco.der,JTextArea1);
+        }
+    }
+    /*------------------------------------*/
+    /*------------------------------------*/
+    /*------------------------------------*/
+    /*------------------------------------*/
+    
+    
+     public void ImprimirPostOrden1(JTextArea JTextArea1) {
+    
+        JTextArea1.append ("Imprimir PosOrden" + "\n");
+        ImprimirPostOrden1(raiz,JTextArea1);
+    }
+
+    private void ImprimirPostOrden1(Nodo Reco, JTextArea JTextArea1) {
+        if (Reco != null) {
+            ImprimirPostOrden1(Reco.izq,JTextArea1);
+            ImprimirPostOrden1(Reco.der,JTextArea1);
+            JTextArea1.append(Reco.info + " ");
+        }
+    }
+    
+      /*------------------------------------*/
+    /*------------------------------------*/
+    /*------------------------------------*/
+    /*------------------------------------*/
+    
     
     private void cantidad(Nodo reco) {
         if (reco!=null) {

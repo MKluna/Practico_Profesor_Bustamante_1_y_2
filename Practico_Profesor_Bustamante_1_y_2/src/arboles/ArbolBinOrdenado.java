@@ -1,4 +1,4 @@
-package arboles;
+ package arboles;
 
 import javax.swing.JTextArea;
 public class ArbolBinOrdenado 
@@ -296,7 +296,7 @@ public class ArbolBinOrdenado
         }
     }
     
-    
+
       /*------------------------------------*/
     /*------------------------------------*/
     /*------------------------------------*/
@@ -312,12 +312,12 @@ public class ArbolBinOrdenado
     private void RecorrerImprimirDerecha(Nodo Reco, JTextArea JTextArea1) {
         if (Reco != null) {
             
-            if(Reco.izq==null)
+            if(Reco.der==null)
             {
                JTextArea1.append (Reco.info + " \n");
             }
-            RecorrerImprimirDerecha(Reco.izq,JTextArea1);
             RecorrerImprimirDerecha(Reco.der,JTextArea1);
+            RecorrerImprimirDerecha(Reco.izq,JTextArea1);
         }
     }
      /*------------------------------------*/
@@ -393,18 +393,39 @@ public class ArbolBinOrdenado
         retornarAltura (raiz,1);
         return altura;
     }
-    
-    public void ImprimirSubArbDer()
+    /////////////////////////////////////////////////////////////////////////////
+    /////////////////////////////////////////////////////////////////////////////
+    public void ImprimirSubArbDer(JTextArea JTextArea1)
     {
         if (raiz != null) 
         {
-            System.out.println("Impresion SubArbol Derecho: ");
-            ImprimirEntreOrden(raiz.der);
+           
+            JTextArea1.append ("Impresion SubArbol Derecho:" + "\n");
+            RecorrerImprimirDerecha(raiz,JTextArea1);
         }else
         {
-            System.out.println("No existe SubArbol Derecho");
+           
+            JTextArea1.append ("No existe SubArbol Derecho:" + "\n");
         }
     }
+    
+    
+     public void ImprimirSubArbIzq(JTextArea JTextArea1)
+    {
+        if (raiz != null) 
+        {
+            
+            JTextArea1.append ("Impresion SubArbol Izquierdo:" + "\n");
+            RecorrerImprimirIzquierdo(raiz,JTextArea1);
+        }else
+        {
+            
+            JTextArea1.append ("No existe SubArbol Izquierdo:" + "\n");
+        }
+    }
+     
+     /////////////////////////////////////////////////////////////////////////////
+     /////////////////////////////////////////////////////////////////////////////
     
     void RecorrerAltura(Nodo Reco , int Nivel)
     {

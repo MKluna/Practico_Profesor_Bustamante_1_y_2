@@ -439,7 +439,9 @@ public class ArbolBinarioOrd extends javax.swing.JDialog
 
     private void btnsubarbolizquierdoActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnsubarbolizquierdoActionPerformed
 
-        Arbol.ImprimirInformacionIzqu(AreaTexto3);
+       
+        
+        Arbol.ImprimirSubArbIzq(AreaTexto3);
         // TODO add your handling code here:
     }//GEN-LAST:event_btnsubarbolizquierdoActionPerformed
 
@@ -473,7 +475,7 @@ Arbol.imPares(AreaTexto3);
     }//GEN-LAST:event_btnimparActionPerformed
 
     private void btnsubarbolderechoActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnsubarbolderechoActionPerformed
-Arbol.ImprimirInformacionDerecha(AreaTexto3);
+   Arbol.ImprimirSubArbDer(AreaTexto3);
         // TODO add your handling code here:
     }//GEN-LAST:event_btnsubarbolderechoActionPerformed
 

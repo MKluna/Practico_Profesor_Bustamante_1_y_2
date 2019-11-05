@@ -7,7 +7,7 @@ package practico_profesor_bustamante_1_y_2;
 
 /**
  *
- * @author Matias
+ * @author 
  */
 public class Practico_Profesor_Bustamante_1_y_2 {
 

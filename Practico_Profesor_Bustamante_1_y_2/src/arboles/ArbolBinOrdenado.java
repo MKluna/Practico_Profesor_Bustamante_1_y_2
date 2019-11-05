@@ -50,12 +50,12 @@ public class ArbolBinOrdenado
         }
     }
     
-    public int Existe(int Info) {
+    public boolean Existe(int Info) {
         
         Nodo Reco = raiz;
         while (Reco != null) {
             if (Reco.info == Info) {
-                return 1;
+                return true;
             } else {
                 if (Info > Reco.info) {
                     Reco = Reco.der;
@@ -64,9 +64,12 @@ public class ArbolBinOrdenado
                 }
             }
         }
-        return 0;
+        return false;
     
     }
+    
+    
+    
     
     public void ImprimirPreOrden() {
     /* Recorrido en Pre Orden
@@ -201,6 +204,123 @@ public class ArbolBinOrdenado
     }
     
       /*------------------------------------*/
+    /*------------------------------------*/
+    /*------------------------------------*/
+    /*------------------------------------*/
+       public void suma(JTextArea JTextArea1) {
+        Cantidad = 0;
+        Recorrerysuma(raiz,JTextArea1);
+        JTextArea1.append ("LA SUMA DE SUS ELEMENTO ES=" +Cantidad);
+        //return Cantidad;
+    }
+
+    private void Recorrerysuma(Nodo Reco, JTextArea JTextArea1){
+        if (Reco != null) {
+            Cantidad=Cantidad+Reco.info;
+            Recorrerysuma(Reco.izq,JTextArea1);
+            Recorrerysuma(Reco.der,JTextArea1);
+        }
+    }
+    
+    
+    
+      /*------------------------------------*/
+    /*------------------------------------*/
+    /*------------------------------------*/
+    /*------------------------------------*/
+    public void Pares(JTextArea JTextArea1) {
+        Cantidad = 0;
+        RecorrerPares(raiz,JTextArea1);
+        
+        JTextArea1.append ("LOS NUMEROS PARES SON = " +Cantidad);
+    }
+
+    private void RecorrerPares(Nodo Reco, JTextArea JTextArea1) {
+        if (Reco != null) {
+            if((Reco.info%2)==0)
+            {
+                  Cantidad++;
+            }
+            RecorrerPares(Reco.izq,JTextArea1);
+            RecorrerPares(Reco.der,JTextArea1);
+        }
+    }
+    
+    
+    
+    
+    
+      /*------------------------------------*/
+    /*------------------------------------*/
+    /*------------------------------------*/
+    /*------------------------------------*/
+    
+    public void imPares(JTextArea JTextArea1) {
+        Cantidad = 0;
+        RecorrerimPares(raiz,JTextArea1);
+        JTextArea1.append ("LOS NUMEROS IMPARES SON = " +Cantidad);
+    }
+
+    private void RecorrerimPares(Nodo Reco, JTextArea JTextArea1) {
+        if (Reco != null) {
+            if((Reco.info%2)!=0)
+            {
+                  Cantidad++;
+            }
+            RecorrerimPares(Reco.izq,JTextArea1);
+            RecorrerimPares(Reco.der,JTextArea1);
+        }
+    }
+    
+    
+    
+    
+      /*------------------------------------*/
+    /*------------------------------------*/
+    /*------------------------------------*/
+    /*------------------------------------*/
+         public void ImprimirInformacionIzqu(JTextArea JTextArea1) {
+         JTextArea1.append ("Imprimir izquierdo" + "\n");
+        RecorrerImprimirIzquierdo(raiz,JTextArea1);
+    }
+
+    private void RecorrerImprimirIzquierdo(Nodo Reco, JTextArea JTextArea1) {
+        if (Reco != null) {
+            
+            if(Reco.izq==null)
+            {
+                JTextArea1.append (Reco.info + " \n");
+            }
+            RecorrerImprimirIzquierdo(Reco.izq,JTextArea1);
+            RecorrerImprimirIzquierdo(Reco.der,JTextArea1);
+        }
+    }
+    
+    
+      /*------------------------------------*/
+    /*------------------------------------*/
+    /*------------------------------------*/
+    /*------------------------------------*/
+    
+           public void ImprimirInformacionDerecha(JTextArea JTextArea1) {
+  
+             JTextArea1.append ("Imprimir derecha" + "\n");
+               RecorrerImprimirDerecha(raiz,JTextArea1);
+    
+    }
+
+    private void RecorrerImprimirDerecha(Nodo Reco, JTextArea JTextArea1) {
+        if (Reco != null) {
+            
+            if(Reco.izq==null)
+            {
+               JTextArea1.append (Reco.info + " \n");
+            }
+            RecorrerImprimirDerecha(Reco.izq,JTextArea1);
+            RecorrerImprimirDerecha(Reco.der,JTextArea1);
+        }
+    }
+     /*------------------------------------*/
     /*------------------------------------*/
     /*------------------------------------*/
     /*------------------------------------*/
